@@ -61,15 +61,15 @@ class MainGUI(Frame):
         self.btn1.place(x=75, y=290)
 
         self.labelInfo = Label(self, text='OUTPUT SCREEN', bg='grey')
-        self.labelInfo.place(x=500, y=113)
+        self.labelInfo.place(x=500, y=81)
 
         info_board_frame = Frame(root)
-        info_board_frame.place(x=360, y=135)
+        info_board_frame.place(x=360, y=103)
 
         scrollbar = Scrollbar(info_board_frame)
         scrollbar.pack(side=RIGHT, fill=Y)
         
-        self.info_board = Text(info_board_frame, width=57, height=11, wrap=WORD, font=('arial',10), bg='#D0CBCA')
+        self.info_board = Text(info_board_frame, width=57, height=15, wrap=WORD, font=('arial',10), bg='#D0CBCA')
         self.info_board.pack()
         self.info_board.insert(END, 'INFORMATION BOARD')
 
@@ -213,15 +213,14 @@ class MainGUI(Frame):
             self.planeRange = aircraft.get_aircraft_range(self.listbox.get(ACTIVE))
             self.longestStage = longestStage
 
-            
-            if self.planeRange > longestStage:
-                self.info_board.insert(17.0, '\n\n%s %s %s %s %s %s %s' % ('The ', plane.manufacturer, ' ', plane.planeType, ' ', plane.planeCode, ' is ready to take-off'))
-            else:
-                showinfo('Aircraf Range Error!', 'Select a bigger aircraft')
-                
             self.info_board.insert(18.0, '\n\nSelected Aircraft Details\n')
-            self.info_board.insert(19.0, plane)                                   
+            self.info_board.insert(19.0, plane) 
 
+            if self.planeRange > longestStage:
+                self.info_board.insert(17.0, '\n\n%s %s %s %s %s %s %s' % ('The ', plane.manufacturer, ' ', plane.planeType, ' ',
+                                                                           plane.planeCode, ' is ready to take-off'))
+            else:     
+                showinfo('Aircraf Range Error!', 'Select a bigger aircraft')                                  
 
 def main():
     root = Tk()
@@ -230,10 +229,3 @@ def main():
     root.mainloop()
 if __name__ == "__main__":
         main()
-
-
-
-
-
-
-
