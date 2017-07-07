@@ -8,7 +8,7 @@ and the cost of fuel varies from airport to airport.
 Given a list of 5 airports (including to the home airport) that a given plane needs to visit in a week, the most economic route must be found. 
 • The distance between airports is calculated as the great circle distance between them 
 • The cost of fuel is assumed to be 1 euro per 1 litre at Airports where the currency is Euros 
-• The cost of fuel in airports where the local currency is not euros is assumed to be the exchange rate from the local currency to euro. e.g. if you travel from London to Dublin and the exchange rate is GBP1 = e1.4029 and you purchase 1000 litres of fuel it will cost e1402.
+• The cost of fuel in airports where the local currency is not euros is assumed to be the exchange rate from the local currency to euro. e.g. if you travel from London to Dublin and the exchange rate is GBP1 = e1.4029 and you purchase 1000 litres of fuel, it will cost e1402.
 
 Product Features. 
 The program will take ﬁle inputs and give ﬁle outputs using CSV formats. 
